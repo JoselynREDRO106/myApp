@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "applicationType": "gateway",
+    "authenticationType": "jwt",
+    "baseName": "gateway",
+    "blueprints": [
+      {
+        "name": "generator-jhipster-dotnetcore",
+        "version": "4.5.0"
+      }
+    ],
+    "clientFramework": "react",
+    "clientTestFrameworks": [],
+    "clientTheme": "darkly",
+    "clientThemeVariant": "dark",
+    "cqrsEnabled": false,
+    "creationTimestamp": 1792429206558,
+    "databaseChoice": "mssql",
+    "databaseType": "sqllite",
+    "dtoSuffix": "Dto",
+    "enableTranslation": true,
+    "entities": [],
+    "jhipsterVersion": "8.10.0",
+    "jwtSecretKey": "ZTIzNzliZDYwNDJhZGIwZTdlOTEwYzlhMTBhZGIwY2YzYjUzMzkyYTg1MTcxZjcwYzk5NmY1NjU4NDljMjJmMjNiYzg0MWQ5ZGU5ZmE0NzE1Y2M5YTk2ZjQ3OGMwNTM1YzUwMw==",
+    "languages": ["en"],
+    "microfrontend": false,
+    "microfrontends": [],
+    "namespace": "Gateway",
+    "nativeLanguage": "en",
+    "prodDatabaseType": "sql",
+    "serverPort": "5000",
+    "serviceDiscoveryType": "consul",
+    "skipCommitHook": true,
+    "testFrameworks": [],
+    "withAdminUi": false,
+    "withTerraformAzureScripts": null
+  }
+}
