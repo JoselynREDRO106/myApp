@@ -13,12 +13,12 @@ RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - && \
 COPY src/*/*.csproj ./src/
 COPY Directory.Packages.props Directory.Packages.props
 RUN for file in $(ls src/*.csproj); do mkdir -p ${file%.*} && mv $file ${file%.*}; done
-RUN dotnet restore "src/Gateway/Gateway.csproj"
+RUN dotnet restore "src/MyApp/MyApp.csproj"
 
 # Copy everything else and build app
 COPY . ./
-WORKDIR src/Gateway/
-RUN dotnet publish "Gateway.csproj" -c Release -o /app/out
+WORKDIR src/MyApp/
+RUN dotnet publish "MyApp.csproj" -c Release -o /app/out
 
 # Final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:9.0-noble AS runtime
