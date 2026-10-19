@@ -1,4 +1,4 @@
-# gateway
+# myApp
 
 This application was generated using JHipster 8.10.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.10.0](https://www.jhipster.tech/documentation-archive/v8.10.0).
 
@@ -16,7 +16,7 @@ In the project root, JHipster generates configuration files for tools like git, 
   Allows to use a specific action when conflicts are found skipping prompts for files that matches a pattern. Each line should match `[pattern] [action]` with pattern been a [Minimatch](https://github.com/isaacs/minimatch#minimatch) pattern and action been one of skip (default if ommited) or force. Lines starting with `#` are considered comments and are ignored.
 - `.jhipster/*.json` - JHipster entity configuration files
 - `docker/` - Docker configurations for the application and services that the application depends on
-- `src/Gateway/ClientApp/` - Web Application folder
+- `src/MyApp/ClientApp/` - Web Application folder
 
 ## Development
 
@@ -28,7 +28,7 @@ Before you can build this project, you must install and configure the following 
 After installing Node, you should be able to run the following command to install development tools.
 You will only need to run this command when dependencies change in [package.json](package.json).
 
-In ./src/Gateway/ClientApp run
+In ./src/MyApp/ClientApp run
 
     npm install
 
@@ -37,13 +37,13 @@ We use npm scripts and [Webpack][] as our build system.
 Run the following commands in two separate terminals to create a blissful development experience where your browser
 auto-refreshes when files change on your hard drive.
 
-    npm --prefix ./src/Gateway/ClientApp start
+    npm --prefix ./src/MyApp/ClientApp start
 
 npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
 specifying a newer version in [package.json](package.json). You can also run `npm update` and `npm install` to manage dependencies.
 Add the `help` flag on any command to see how you can use it. For example, `npm help update`.
 
-The `npm --prefix ./src/Gateway/ClientApp run` command will list all of the scripts available to run for this project.
+The `npm --prefix ./src/MyApp/ClientApp run` command will list all of the scripts available to run for this project.
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
 1. [Node.js](https://nodejs.org/): Node is used to run a development web server and build the project.
@@ -76,7 +76,7 @@ The `npm run` command will list all the scripts available to run for this projec
 
 JHipster ships with PWA (Progressive Web App) support, and it's turned off by default. One of the main components of a PWA is a service worker.
 
-The service worker initialization code is commented out by default. To enable it, uncomment the following code in `src/Gateway/ClientApp/src/index.html`:
+The service worker initialization code is commented out by default. To enable it, uncomment the following code in `src/MyApp/ClientApp/src/index.html`:
 
 ```html
 <script>
@@ -113,15 +113,15 @@ For further instructions on how to develop with JHipster, have a look at [Using 
 
 ### .Net Production builds
 
-To build the artifacts and optimize the gateway application for production, run:
+To build the artifacts and optimize the myApp application for production, run:
 
 ```
-cd ./src/Gateway
-rm -rf ./src/Gateway/wwwroot
-dotnet publish --verbosity normal -c Release -o ./app/out ./Gateway.csproj
+cd ./src/MyApp
+rm -rf ./src/MyApp/wwwroot
+dotnet publish --verbosity normal -c Release -o ./app/out ./MyApp.csproj
 ```
 
-The `./src/Gateway/app/out` directory will contain your application dll and its depedencies.
+The `./src/MyApp/app/out` directory will contain your application dll and its depedencies.
 
 ## Testing
 
@@ -167,7 +167,7 @@ Manually :
 
 `dotnet tool install --global dotnet-sonarscanner`
 
-3. Run ``dotnet sonarscanner begin /d:sonar.login=admin /d:sonar.password=admin /k:"Gateway" /d:sonar.host.url="http://localhost:9001" /s:"`pwd`/SonarQube.Analysis.xml"``
+3. Run ``dotnet sonarscanner begin /d:sonar.login=admin /d:sonar.password=admin /k:"MyApp" /d:sonar.host.url="http://localhost:9001" /s:"`pwd`/SonarQube.Analysis.xml"``
 
 4. Build your application : `dotnet build`
 
@@ -192,13 +192,13 @@ Manually :
 You can also fully dockerize your application and all the services that it depends on. To achieve this, first build a docker image of your app by running:
 
 ```bash
-docker build -f ./Dockerfile-Back -t gateway .
+docker build -f ./Dockerfile-Back -t myapp .
 ```
 
 Then run:
 
 ```bash
-docker run -p 8080:8080 gateway
+docker run -p 8080:8080 myapp
 ```
 
 Or you can simply run :
@@ -215,9 +215,7 @@ docker compose -f .\docker\app.yml up
 
 [JHipster Homepage and latest documentation]: https://www.jhipster.tech
 [JHipster 8.10.0 archive]: https://www.jhipster.tech/documentation-archive/v8.10.0
-[Doing microservices with JHipster]: https://www.jhipster.tech/documentation-archive/v8.10.0/microservices-architecture/
 [Using JHipster in development]: https://www.jhipster.tech/documentation-archive/v8.10.0/development/
-[Service Discovery and Configuration with Consul]: https://www.jhipster.tech/documentation-archive/v8.10.0/microservices-architecture/#consul
 [Using Docker and Docker-Compose]: https://www.jhipster.tech/documentation-archive/v8.10.0/docker-compose
 [Using JHipster in production]: https://www.jhipster.tech/documentation-archive/v8.10.0/production/
 [Running tests page]: https://www.jhipster.tech/documentation-archive/v8.10.0/running-tests/

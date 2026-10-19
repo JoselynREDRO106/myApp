@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MyApp.Crosscutting/MyApp.Crosscutting.csproj" />
+    <Project Path="src/MyApp.Domain.Services/MyApp.Domain.Services.csproj" />
+    <Project Path="src/MyApp.Domain/MyApp.Domain.csproj" />
+    <Project Path="src/MyApp.Dto/MyApp.Dto.csproj" />
+    <Project Path="src/MyApp.Infrastructure/MyApp.Infrastructure.csproj" />
+    <Project Path="src/MyApp/MyApp.csproj" />
+  </Folder>
+</Solution>

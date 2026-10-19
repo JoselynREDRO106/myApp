@@ -1,11 +1,11 @@
 {
-  "name": "gateway",
+  "name": "my-app",
   "version": "0.0.0",
   "private": true,
-  "description": "Description for Gateway",
+  "description": "Description for My App",
   "license": "UNLICENSED",
   "workspaces": [
-    "src/Gateway/ClientApp"
+    "src/MyApp/ClientApp"
   ],
   "scripts": {
     "app:up": "docker compose -f docker/app.yml up --wait",
@@ -14,16 +14,12 @@
     "ci:e2e:run": "concurrently -k -s first \"npm run ci:e2e:server:start\" \"npm run e2e:headless\"",
     "ci:e2e:server:start": "docker compose -f docker/app.yml up --wait",
     "ci:e2e:teardown": "npm run ci:e2e:teardown:docker --if-present",
-    "ci:e2e:teardown:docker": "docker compose -f docker/services.yml down -v && docker ps -a",
-    "ci:frontend:test": "npm run -w src/Gateway/ClientApp/ ci:frontend:test",
-    "docker:consul:down": "docker compose -f docker/consul.yml down -v",
-    "docker:consul:up": "docker compose -f docker/consul.yml up --wait",
-    "docker:db:up": "echo \"Docker for db sqllite not configured for application gateway\"",
+    "ci:frontend:test": "npm run -w src/MyApp/ClientApp/ ci:frontend:test",
+    "docker:db:up": "echo \"Docker for db sqllite not configured for application myApp\"",
     "prettier:check": "prettier --check \"{,src/**/,webpack/,.blueprint/**/}*.{md,json,yml,js,cjs,mjs,ts,cts,mts,html,tsx,css,scss}\"",
     "prettier:format": "prettier --write \"{,src/**/,webpack/,.blueprint/**/}*.{md,json,yml,js,cjs,mjs,ts,cts,mts,html,tsx,css,scss}\"",
-    "services:up": "docker compose -f docker/services.yml up --wait",
-    "test": "npm test -w src/Gateway/ClientApp/",
-    "webapp:build": "npm run -w src/Gateway/ClientApp/ webapp:build"
+    "test": "npm test -w src/MyApp/ClientApp/",
+    "webapp:build": "npm run -w src/MyApp/ClientApp/ webapp:build"
   },
   "config": {
     "default_environment": "prod"

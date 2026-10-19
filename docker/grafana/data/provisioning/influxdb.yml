@@ -8,7 +8,7 @@ datasources:
   - name: InfluxDB
     type: influxdb
     access: proxy
-    url: http://gateway-influxdb:8086
+    url: http://myapp-influxdb:8086
     password:
     user:
     database: telegraf
